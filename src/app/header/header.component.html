@@ -1,28 +1,32 @@
 <mat-card class="main-header">
   <div class="header-left">
     <mat-icon>menu</mat-icon>
-    <img  src="https://media-exp1.licdn.com/dms/image/C4D0BAQHe4zbA9zlwDw/company-logo_200_200/0/1592908779516?e=2147483647&v=beta&t=ICbz9o36R8J9gNZaebc_wgznQJOyzZa-XGLGcGNu3nU" class="image-header" >
+    <img src="assets/logo.png" class="image-header">
+  </div>
+  <div style="align-items: center;display:flex;" class="project-option">
+    <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Projects</button>
+    <mat-icon class="icon-ext">expand_more</mat-icon>
   </div>
 
-  <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Projects<mat-icon >expand_more</mat-icon></button>
-
-    <ng-template #menu class="example-menu-container">
-      <div class="example-menu" cdkMenu>
-        <mat-form-field appearance="outline" class="Searchbar">
-          <mat-icon matPrefix class="fa-filter"></mat-icon>
-          <input matInput type="text" [(ngModel)]="searchText" placeholder="Filter" class="serachtextinput">
-        </mat-form-field>
-       
-        <button class="example-menu-item" cdkMenuItem
-          *ngFor="let inspectionType of inspectionTypes | filter : searchText "
-          [value]="inspectionType.inspection_type_id">{{inspectionType.description}}</button>
+  <ng-template #menu class="example-menu-container">
+    <div class="example-menu" cdkMenu>
+      <div class="SearchInput">
+        <fa-icon [icon]="filtericon" class="icon-color"></fa-icon>
+        <input type="text" [(ngModel)]="searchText" placeholder="Filter" class="serachtextinput">
       </div>
-    </ng-template>
+      <button class="example-menu-item" cdkMenuItem
+        *ngFor="let inspectionType of inspectionTypes | filter : searchText "
+        [value]="inspectionType.inspection_type_id">{{inspectionType.description}}</button>
+    </div>
+  </ng-template>
 
   <div class="header-right">
     <mat-icon class="mat-not">notifications_none</mat-icon>
-    <button mat-button [matMenuTriggerFor]="menutwo"  class="loginbtn loginbtn-desk">First Last name  <mat-icon>expand_more</mat-icon></button>
-    <button mat-button [matMenuTriggerFor]="menutwo"  class="loginbtn-mob"><mat-icon >perm_identity</mat-icon></button>
+
+    <button mat-button [matMenuTriggerFor]="menutwo" class="loginbtn loginbtn-desk">First Last name<mat-icon class="icon-ext">expand_more</mat-icon></button>
+    <button mat-button [matMenuTriggerFor]="menutwo" class="loginbtn-mob">
+      <fa-icon [icon]="usericon" class="icon-user"></fa-icon>
+    </button>
     <mat-menu #menutwo="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>

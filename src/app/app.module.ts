@@ -14,6 +14,7 @@ import {CdkMenuModule} from '@angular/cdk/menu';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import {MatButtonModule} from '@angular/material/button';
     CdkMenuModule,
     MatMenuModule,
     MatButtonModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
