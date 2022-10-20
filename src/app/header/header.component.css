@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     max-height: 68px;
     border-bottom: 5px solid #122C50;
+    justify-content: space-between;
 }
 
 .icon-color {
@@ -46,6 +47,7 @@
 
 /* division */
 example-menu {
+  
     display: inline-flex;
     flex-direction: column;
     min-width: 100px;

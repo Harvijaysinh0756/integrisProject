@@ -3,9 +3,9 @@
     <mat-icon>menu</mat-icon>
     <img src="assets/logo.png" class="image-header">
   </div>
-  <div style="align-items: center;display:flex;" class="project-option">
-    <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Projects</button>
-    <mat-icon class="icon-ext">expand_more</mat-icon>
+  <div style="align-items: center;display:flex;" class="project-option" [cdkMenuTriggerFor]="menu">
+    <button  class="example-standalone-trigger">Projects</button>
+    <mat-icon class="icon-ext" >expand_more</mat-icon>
   </div>
 
   <ng-template #menu class="example-menu-container">
